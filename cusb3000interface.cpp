@@ -196,7 +196,7 @@ bool CUsb3000Interface::OpenDevice(void)
     ftStatus = FT_SetDataCharacteristics(m_FtdiHandle, FT_BITS_8, FT_STOP_BITS_1, FT_PARITY_NONE);
     if ( ftStatus != FT_OK ) { FTDI_Error((char *)"FT_SetDataCharacteristics", ftStatus ); return false; }
     
-    ftStatus = FT_SetFlowControl(m_FtdiHandle, FT_FLOW_NONE, 0x11, 0x13);
+    ftStatus = FT_SetFlowControl(m_FtdiHandle, FT_FLOW_RTS_CTS, 0x11, 0x13);
     if (ftStatus != FT_OK) { FTDI_Error((char *)"FT_SetFlowControl", ftStatus ); return false; }
     
     ftStatus = FT_SetRts (m_FtdiHandle);
