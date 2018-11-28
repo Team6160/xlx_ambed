@@ -54,7 +54,7 @@
 // global ------------------------------------------------------
 
 //#define RUN_AS_DAEMON
-#define NB_MAX_STREAMS                  99
+#define NB_MAX_STREAMS                  26                                  //number of transcoded modules
 //#define DEBUG_DUMPFILE
 
 // Transcoder server --------------------------------------------
@@ -68,7 +68,7 @@
 #define CODEC_AMBE2PLUS                 2
 
 // Transcoding speech gains
-#define CODECGAIN_AMBEPLUS              -10                                  // in dB
+#define CODECGAIN_AMBEPLUS              -10                                 // in dB
 #define CODECGAIN_AMBE2PLUS             +10                                 // in dB
 
 // Timeouts -----------------------------------------------------
@@ -87,7 +87,7 @@ typedef unsigned int            uint;
 ////////////////////////////////////////////////////////////////////////////////////////
 // macros
 
-#define MIN(a,b) 				((a) < (b))?(a):(b)
+#define MIN(a,b) 				((float)(a) < (float)(b))?(a):(b)
 #define MAX(a,b) 				((a) > (b))?(a):(b)
 #define MAKEWORD(low, high)		((uint16)(((uint8)(low)) | (((uint16)((uint8)(high))) << 8)))
 #define MAKEDWORD(low, high)	((uint32)(((uint16)(low)) | (((uint32)((uint16)(high))) << 16)))
