@@ -9,8 +9,8 @@ Restart=always
 RestartSec=3
 StandardOutput=null
 WorkingDirectory=/usr/local/bin
-ExecStartPre=rmmod ftdi_sio
-ExecStartPre=rmmod usbserial
+ExecStartPre=-/sbin/rmmod ftdi_sio
+ExecStartPre=-/sbin/rmmod usbserial
 ExecStart=/usr/bin/screen -S ambed -D -m /usr/local/bin/ambed 127.0.0.1
 ExecStop=/usr/bin/screen -S ambed -X quit
 
