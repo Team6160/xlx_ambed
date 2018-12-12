@@ -44,6 +44,7 @@ Multiple devices can be used at the same time.
 You need to use 3000 by pairs or paired with a 3003
 Do not to use USB hubs as they have proven making
 system behaviour unreliable.
+
 Instructions:
 =============
 1) Installation of FTDI drivers
