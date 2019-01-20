@@ -63,7 +63,7 @@ For raspberry ARMv6 ARMv7
 Extract files
 ```
 # tar xfvz libftd2xx-XXX-1.4.8.tgz
-# cd /release/build
+# cd release/build
 # cp libftd2xx.* /usr/local/lib
 # chmod 0755 /usr/local/lib/libftd2xx.so.1.4.8
 # ln -sf /usr/local/lib/libftd2xx.so.1.4.8 /usr/local/lib/libftd2xx.s
