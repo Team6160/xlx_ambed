@@ -78,7 +78,7 @@ Only Debian 7
 ```
 2) download and compile ambed
 ```
-# git clone https://github.com/LX3JL/xlxd.git
+# git clone https://github.com/lucamarche-iz1mlt/xlx_ambed.git
 # cd xlxd/ambed/
 # make clean
 # make
