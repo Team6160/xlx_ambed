@@ -54,13 +54,13 @@
 // global ------------------------------------------------------
 
 //#define RUN_AS_DAEMON
-#define NB_MAX_STREAMS                  99
+#define NB_MAX_STREAMS                  26                                  //number of transcoded modules
 //#define DEBUG_DUMPFILE
 
 // Transcoder server --------------------------------------------
 #define TRANSCODER_PORT                 10100                               // UDP port
-#define TRANSCODER_KEEPALIVE_PERIOD     5                                   // in seconds
-#define TRANSCODER_KEEPALIVE_TIMEOUT    30                                  // in seconds
+#define TRANSCODER_KEEPALIVE_PERIOD     2                                   // in seconds
+#define TRANSCODER_KEEPALIVE_TIMEOUT    (TRANSCODER_KEEPALIVE_PERIOD + 1)   // in seconds
 
 // Codecs -------------------------------------------------------
 #define CODEC_NONE                      0
@@ -68,11 +68,11 @@
 #define CODEC_AMBE2PLUS                 2
 
 // Transcoding speech gains
-#define CODECGAIN_AMBEPLUS              -10                                  // in dB
+#define CODECGAIN_AMBEPLUS              -10                                 // in dB
 #define CODECGAIN_AMBE2PLUS             +10                                 // in dB
 
 // Timeouts -----------------------------------------------------
-#define STREAM_ACTIVITY_TIMEOUT         3                                   // in seconds
+#define STREAM_ACTIVITY_TIMEOUT         TRANSCODER_KEEPALIVE_TIMEOUT        // in seconds
 
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -87,7 +87,7 @@ typedef unsigned int            uint;
 ////////////////////////////////////////////////////////////////////////////////////////
 // macros
 
-#define MIN(a,b) 				((a) < (b))?(a):(b)
+#define MIN(a,b) 				((float)(a) < (float)(b))?(a):(b)
 #define MAX(a,b) 				((a) > (b))?(a):(b)
 #define MAKEWORD(low, high)		((uint16)(((uint8)(low)) | (((uint16)((uint8)(high))) << 8)))
 #define MAKEDWORD(low, high)	((uint32)(((uint16)(low)) | (((uint32)((uint16)(high))) << 16)))
