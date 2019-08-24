@@ -18,5 +18,5 @@ clean:
 
 install:
 	cp $(EXECUTABLE) /usr/local/bin/
-	cp ~/Systemd/ambed.service /lib/systemd/system/
-	cp ~/Systemd/ambed.timer /lib/systemd/system/
+	cp Systemd/ambed.service /lib/systemd/system/
+	cp Systemd/ambed.timer /lib/systemd/system/
